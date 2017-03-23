@@ -256,6 +256,7 @@ table, thead, tbody, td, th, tr {
     -webkit-transition: background-color 0.5s;
 }
 
+.link-box-selected,
 .link-box:hover {
     background: #c5000b;
     border-color: #c5000b;

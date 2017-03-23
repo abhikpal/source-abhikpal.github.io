@@ -21,8 +21,10 @@ PAGE_SAVE_AS = PAGE_URL + '.html'
 
 TAG_URL = 'blog/tags/{slug}'
 TAG_SAVE_AS = TAG_URL + '.html'
+
 CATEGORIES_URL = 'blog/categories/{slug}'
 CATEGORIES_SAVE_AS = CATEGORIES_URL + '.html'
+
 ARCHIVES_URL = 'blog/archives'
 ARCHIVES_SAVE_AS = ARCHIVES_URL + '.html'
 
@@ -43,7 +45,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Blog Home', SITEURL + "/"),
          ('Github', 'https://www.github.com/abhikpal'),
-         ('Archives', ARCHIVES_URL),)
+         ('Archives', SITEURL + "/" + ARCHIVES_URL),)
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),

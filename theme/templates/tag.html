@@ -1,14 +1,20 @@
 {% extends "base.html" %}
+
+{% block title %} Tag: {{ tag }} | {{ super() }}{% endblock %}
 {% block content %}
 <article>
-    <h1>Archives and tags</h1>
+<h1>Archives and tags</h1>
 
-    <div>
-    {% for t, articles in tags %}
-        <a href="{{ SITEURL }}/{{ t.url }}" class="link-box">{{ t }} ({{ articles | length }})</a>
-    {% endfor %}
-    </div>
+<div>
+{% for t, articles in tags %}
+<a href="{{ SITEURL }}/{{ t.url }}"
+    class="link-box {% if t == tag %}link-box-selected{% endif %}">
+{{ t }} ({{ articles | length }})</a>
+{% endfor %}
+</div>
 
+{% for t, articles in tags %}
+    {% if t == tag %}
     <ul class="archive-list">
     {% for article in articles %}
     <li>
@@ -23,5 +29,9 @@
     </li>
     {% endfor %}
     </ul>
+{% endif %}
+{% endfor %}
+<a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Back to Archives</a> 
 </article>
 {% endblock %}
+
