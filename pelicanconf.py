@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Abhik Pal'
 SITENAME = AUTHOR + '\'s Weblog'
-SITESUBTITLE = "Adventures in code, cringe-worthy rants, and other things."
 SITEURL = ''
 
 PATH = 'content'
@@ -27,7 +26,6 @@ CATEGORIES_SAVE_AS = CATEGORIES_URL + '.html'
 ARCHIVES_URL = 'blog/archives'
 ARCHIVES_SAVE_AS = ARCHIVES_URL + '.html'
 
-
 TYPOGRIFY = True
 
 SUMMARY_MAX_LENGTH = 100
@@ -43,10 +41,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('Blog Home', SITEURL + "/"),
+         ('Github', 'https://www.github.com/abhikpal'),
+         ('Archives', ARCHIVES_URL),)
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),

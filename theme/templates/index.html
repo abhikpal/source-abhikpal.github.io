@@ -2,8 +2,14 @@
 {% block title %} Home | {{ super() }}{% endblock %}
 {% block content %}
 {% block content_title %}
-<header>
-    <h1 class="title">{{ SITENAME }} <br> <span class="subtitle">{{ SITESUBTITLE }}</span> </h1>
+<header class="title">
+    <h1>
+        {{ SITENAME }}
+    </h1>
+    {% for nm, url in LINKS %}
+    <a class="link-no-box" href="{{ url }}"
+    {% if loop.first %}style="margin-left:-0.5em;"{% endif %}>{{ nm }}</a>
+    {% endfor %}
 </header>
 {% endblock %}
 
