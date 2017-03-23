@@ -3,14 +3,37 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Abhik Pal'
-SITENAME = 'Weblog'
+SITENAME = AUTHOR + '\'s Weblog'
+SITESUBTITLE = "Adventures in code, cringe-worthy rants, and other things."
 SITEURL = ''
 
 PATH = 'content'
 
+DEFAULT_DATE_FORMAT = '%A %B %d, %Y'
 TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = 'en'
+
+ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}'
+ARTICLE_SAVE_AS = ARTICLE_URL + '.html'
+
+PAGE_URL = '{category}/{slug}'
+PAGE_SAVE_AS = PAGE_URL + '.html'
+
+TAG_URL = 'blog/tags/{slug}'
+TAG_SAVE_AS = TAG_URL + '.html'
+CATEGORIES_URL = 'blog/categories/{slug}'
+CATEGORIES_SAVE_AS = CATEGORIES_URL + '.html'
+ARCHIVES_URL = 'blog/archives'
+ARCHIVES_SAVE_AS = ARCHIVES_URL + '.html'
+
+
+TYPOGRIFY = True
+
+SUMMARY_MAX_LENGTH = 100
+
+DELETE_OUTPUT_DIRECTORY = True
+OUTPUT_RETENTION = ['.git']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -32,4 +55,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
+
+# THEME
+THEME = 'theme/'

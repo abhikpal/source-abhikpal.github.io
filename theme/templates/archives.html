@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+    <h1>Archives and tags</h1>
+
+    <div>
+    {% for tag, articles in tags %}
+        <a href="{{ SITEURL }}/{{ tag.url }}" class="link-box">{{ tag }} ({{ articles | length }})</a>&nbsp;&nbsp;
+    {% endfor %}
+    </div>
+
+    <ul class="archive-list">
+    {% for article in articles %}
+    <li>
+        <a float="left" href='/{{ article.url }}'>{{ article.title }}</a>
+        <span>
+            <small>
+                <time datetime="{{ article.date.isoformat() }}">
+                {{ article.date.strftime('%B %d, %Y') }}
+                </time>
+            </small>
+        </span>
+    </li>
+    {% endfor %}
+    </ul>
+</article>
+{% endblock %}

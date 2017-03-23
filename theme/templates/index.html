@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %} Home | {{ super() }}{% endblock %}
+{% block content %}
+{% block content_title %}
+<header>
+    <h1 class="title">{{ SITENAME }} <br> <span class="subtitle">{{ SITESUBTITLE }}</span> </h1>
+</header>
+{% endblock %}
+
+{% if articles %}
+{% for article in articles_page.object_list %}
+<section class="article-list">
+    <article>
+        <header>
+            <h2>
+            <a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a>
+            {%- if not HIDE_DATE -%}
+            <br>
+            <small><time datetime="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}
+            </time></small>
+            {%- endif -%}
+            </h2>
+        </header>
+        <main>
+            {{ article.summary }}
+        </main>
+        <a href="{{ SITEURL }}/{{ article.url }}" id="page-title"><i>Read more &#8594;</i></a>
+        {% if article.tags|length > 0 %}
+            <br>
+            {% for tag in article.tags %}
+            <a class="link-box" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>&nbsp;&nbsp;
+            {% endfor %}
+        {% endif %}
+    </article>
+</section>
+{% endfor %}
+{% else %}
+<section><h3>No posts found.</h3></section>
+{% endif %}
+
+{% if articles_page.has_other_pages() %}
+<br><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" class="link-box"> Older Posts </a>
+{% endif %}
+{% endblock content %}

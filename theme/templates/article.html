@@ -1,0 +1,19 @@
+{%- if article.lang %}{% set DEFAULT_LANG = article.lang %}{% endif -%}
+{% extends "base.html" %}
+{% block title %}{{ article.title }} | {{ super() }}{% endblock %}
+{% block content %}        
+<header>
+<h1>
+    <a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a>
+    {%- if not HIDE_DATE -%}
+    <br>
+    <small><time datetime="{{ article.date.isoformat() }}">
+        {{ article.locale_date }}
+    </time></small>
+    {%- endif -%}
+</h1>
+</header>
+<article>
+{{ article.content }}
+</article>
+{% endblock %}
