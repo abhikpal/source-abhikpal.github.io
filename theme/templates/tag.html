@@ -1,9 +1,8 @@
 {% extends "base.html" %}
-
-{% block title %} Tag: {{ tag }} | {{ super() }}{% endblock %}
+{% block title %}{{ tag }} - Archives and Tags | {{ super() }}{% endblock %}
 {% block content %}
 <article>
-<h1>Archives and tags</h1>
+<h1>Archives and Tags</h1>
 
 <div>
 {% for t, articles in tags %}
