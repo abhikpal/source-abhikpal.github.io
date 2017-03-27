@@ -3,24 +3,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>{% block title %}{{ SITENAME }} {%endblock%}</title>
-    
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css">
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/monokai.css">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/theme/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="{{ AUTHOR }}">
+    <meta name="description" content="{% block description %}{%endblock%}">
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/monokai.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/theme/favicon.ico">
+    {%block extra_head %}{% endblock %}
 </head>
-
 <body>
-{% block content %}
+{% block content %}{% endblock %}
+{% block footer %}
+    <footer>
+        {% for nm, url in LINKS %}
+        <a class="link-no-box" href="{{ url }}">{{ nm }}</a>
+        {% endfor %}
+
+        <br>
+
+        <a href="/">{{ SITENAME }}</a> was built using
+        <a href="http://docs.getpelican.com/en/stable/">Pelican</a>.
+        Original articles on this site are CC
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">BY-NC-SA</a>
+        licensed unless otherwise stated.
+    </footer>
 {% endblock %}
-<footer>
-{% for nm, url in LINKS %}
-<a class="link-no-box" href="{{ url }}">{{ nm }}</a>
-{% endfor %}
-<br>
-<a href="{{ SITEURL }}/">{{ SITENAME }}</a> was built using <a href="http://docs.getpelican.com/en/stable/">Pelican</a>. Original articles on this site are CC <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">BY-NC-SA</a> licensed unless otherwise stated.
-</footer>
 {% include '_includes/ganalytics.html' %}
 </body>
 </html>

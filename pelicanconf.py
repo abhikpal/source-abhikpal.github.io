@@ -42,7 +42,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
 LINKS = (('Blog Home', SITEURL + "/"),
          ('Github', 'https://www.github.com/abhikpal'),
          ('Archives', SITEURL + "/" + ARCHIVES_URL),)
@@ -51,7 +50,7 @@ LINKS = (('Blog Home', SITEURL + "/"),
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 7
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
