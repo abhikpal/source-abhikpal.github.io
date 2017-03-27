@@ -162,6 +162,32 @@ blockquote {
     border: 1px solid #c5000b;
 }
 
+.admonition {
+    border: 1px solid #c5000b;
+    padding: 0.5em;
+    padding-top: 0px;
+    line-height: 1.2;
+    max-width: 75%;
+    align-self: center;
+    margin: auto;
+}
+
+.admonition .admonition-title {
+    border-bottom: 1px dotted;
+    border-color: inherit;
+    color: #c5000b;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    margin-top: 0;
+    padding: 0.5em;
+    line-height: 1em;
+    font-size: 0.8em;
+    font-family: monospace, monospace;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
 footer {
     margin-top: 10em;
     margin-bottom: 0;
@@ -317,12 +343,14 @@ table, thead, tbody, td, th, tr {
     line-height: 1.1em;
 }
 
+.admonition-title ::selection,
 .highlight ::selection {
     background: #111;
     color: #eeeeee;
 }
 
+.admonition-title ::-moz-selection,
 .highlight ::-moz-selection {
     background: #111;
-    color: #eeeeee;
+    color: #eeeeee;   
 }
