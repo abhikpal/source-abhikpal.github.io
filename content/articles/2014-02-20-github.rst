@@ -1,0 +1,26 @@
+Github
+=======
+ 
+:date: 2014-02-20 13:10:53 +0530
+:tags: blog-update
+:comments: True
+
+:modified: 2016-07-29
+:summary: I finally moved to Github. Here are two screenshots and some thoughts.
+
+.. epigraph::
+
+    This is here for historical reasons. 
+
+    -- July 29th 2016
+
+Finally, after going through the Sparkfun tutorial at https://learn.sparkfun.com/tutorials/using-github/all I was able to set up my Github Repo for this blog. It resides at ``[DEAD-LINK-REMOVED]``
+
+.. image:: /images/github2.png
+    :alt: Github screenshot 2
+
+All codes and snippets on this blog, from now, will go to this repo instead of the gist which I used to use earlier. The repo also contains the custom scripts and style-sheets used in this blog ready to be hacked.
+
+.. image:: /images/github1.png
+    :alt: Github screenshot 1
+
