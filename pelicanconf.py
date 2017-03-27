@@ -14,6 +14,8 @@ TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = 'en'
 
+THEME = 'theme/'
+
 PLUGIN_PATHS = ['./plugins', './plugins/pelican-plugins']
 PLUGINS = ['code_include']
 
@@ -33,7 +35,6 @@ ARCHIVES_URL = 'blog/archives'
 ARCHIVES_SAVE_AS = ARCHIVES_URL + '.html'
 
 TYPOGRIFY = True
-
 SUMMARY_MAX_LENGTH = 100
 
 DELETE_OUTPUT_DIRECTORY = True
@@ -50,14 +51,7 @@ LINKS = (('Blog Home', SITEURL + "/"),
          ('Github', 'https://www.github.com/abhikpal'),
          ('Archives', SITEURL + "/" + ARCHIVES_URL),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
-
 DEFAULT_PAGINATION = 7
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
-
-# THEME
-THEME = 'theme/'
+RELATIVE_URLS = False
