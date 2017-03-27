@@ -13,10 +13,10 @@ html, body {
     background: none repeat scroll 0% 0% #fefefe;
     color: #222;
     font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif; 
+    font-variant-ligatures: common-ligatures;
     font-variant-numeric: oldstyle-nums diagonal-fractions;
     font-size: 14pt;
     line-height: 1.7em;
-    font-variant-ligatures: common-ligatures;
 }
 
 /* 6 7 8 9 10 11 12 14 16 18 21 24 3 6 4 8 60 72 */
@@ -73,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1.2em;
     margin-bottom: 0.9em;
     color: #c5000b;
+}
+
+article > p:first-of-type {
+    margin-top: 3em;
 }
 
 time {
@@ -218,6 +222,20 @@ table, thead, tbody, td, th, tr {
     font-variant-numeric: tabular-nums;
 }
 
+.footnote {
+    font-size: 0.8em;
+}
+
+.footnote:first-of-type {
+    margin-top: 4em;
+}
+
+.footnote table, .footnote thead, .footnote tbody, .footnote td, .footnote th, .footnote tr{
+    font-variant-numeric: oldstyle-nums diagonal-fractions;
+}
+
+
+
 .article-list {
     margin-bottom: 4em;
 }
@@ -285,14 +303,6 @@ table, thead, tbody, td, th, tr {
     font-weight: bold;
 }
 
-.footnote:first-of-type {
-    margin-top: 4em;
-}
-
-
-.footnote {
-    font-size: 0.8em;
-}
 
 .highlight pre {
     border-radius: 5px;
