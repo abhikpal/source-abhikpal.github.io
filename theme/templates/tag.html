@@ -6,7 +6,7 @@
 
 <div>
 {% for t, articles in tags %}
-<a href="{{ SITEURL }}/{{ t.url }}"
+<a href="/{{ t.url }}"
     class="link-box {% if t == tag %}link-box-selected{% endif %}">
 {{ t }} ({{ articles | length }})</a>
 {% endfor %}
@@ -30,7 +30,7 @@
     </ul>
 {% endif %}
 {% endfor %}
-<a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Back to Archives</a> 
+<a href="/{{ ARCHIVES_URL }}">Back to Archives</a> 
 </article>
 {% endblock %}
 

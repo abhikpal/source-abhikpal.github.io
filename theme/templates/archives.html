@@ -5,7 +5,7 @@
 <h1>Archives and Tags</h1>
 <div>
 {% for t, articles in tags %}
-    <a href="{{ SITEURL }}/{{ t.url }}" class="link-box">{{ t }} ({{ articles | length }})</a>
+    <a href="/{{ t.url }}" class="link-box">{{ t }} ({{ articles | length }})</a>
 {% endfor %}
 </div>
 

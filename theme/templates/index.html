@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %} Home | {{ super() }}{% endblock %}
 {% block content %}
 {% block content_title %}
 <header class="title">
@@ -19,7 +18,7 @@
     <article>
         <header>
             <h2>
-            <a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a>
+            <a href="/{{ article.url }}" id="page-title">{{ article.title }}</a>
             {%- if not HIDE_DATE -%}
             <br>
             <small><time datetime="{{ article.date.isoformat() }}">
@@ -31,11 +30,11 @@
         <main>
             {{ article.summary }}
         </main>
-        <a href="{{ SITEURL }}/{{ article.url }}" id="page-title"><i>Read more &#8594;</i></a>
+        <a href="/{{ article.url }}" id="page-title"><i>Read more &#8594;</i></a>
         {% if article.tags|length > 0 %}
             <br>
             {% for tag in article.tags %}
-            <a class="link-box" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>&nbsp;&nbsp;
+            <a class="link-box" href="/{{ tag.url }}">{{ tag }}</a>&nbsp;&nbsp;
             {% endfor %}
         {% endif %}
     </article>
@@ -46,6 +45,6 @@
 {% endif %}
 
 {% if articles_page.has_other_pages() %}
-<br><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" class="link-box"> Older Posts </a>
+<br><a href="/{{ ARCHIVES_URL }}" class="link-box"> Older Posts </a>
 {% endif %}
 {% endblock content %}

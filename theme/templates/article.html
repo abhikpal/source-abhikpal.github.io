@@ -4,14 +4,19 @@
 {% block content %}        
 <header>
 <h1>
-    <a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a>
+    <a href="/{{ article.url }}" id="page-title">{{ article.title }}</a>
     {%- if not HIDE_DATE -%}
     <br>
     <small><time datetime="{{ article.date.isoformat() }}">
         {{ article.locale_date }}
     </time></small>
-    {%- endif -%}
 </h1>
+{% if article.tags|length > 0 %}
+{% for tag in article.tags %}
+<small><a href="/{{ tag.url }}" class="link-box">{{ tag }}</a></small>
+{% endfor %}
+{% endif %}
+    {%- endif -%}
 </header>
 <article>
 {{ article.content }}
