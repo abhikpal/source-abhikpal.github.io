@@ -13,6 +13,9 @@ TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = 'en'
 
+PLUGIN_PATHS = ['./plugins', './plugins/pelican-plugins']
+PLUGINS = ['code_include']
+
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = ARTICLE_URL + '.html'
 
