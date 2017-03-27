@@ -205,9 +205,12 @@ kbd {
     border-radius: 0.5em;
 }
 
-caption, figcaption {
+caption, figcaption, .figure .caption {
     font-size: 0.8em;
     color: #888;
+    line-height: 1.2em;
+    margin-top: 0;
+    text-align: center;
 }
 
 img {
