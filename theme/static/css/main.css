@@ -296,7 +296,7 @@ table, thead, tbody, td, th, tr {
     color: #222;
 }
 
-.archive-list li span {
+.archive-list li > span {
     text-align: right;
     float: right;
 }
