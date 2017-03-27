@@ -199,10 +199,13 @@ mark {
 }
 
 kbd {
-    text-transform: uppercase;
-    padding: 0.5em;
-    border: 1px solid #888;
+    text-transform: lowercase;
+    padding: 0.2em;
+    border: 1px solid rgb(136, 136, 136);
     border-radius: 0.5em;
+    background: #eee;
+    font-variant: small-caps;
+    box-shadow: 0px 2px 2px #aaa;
 }
 
 caption, figcaption, .figure .caption {

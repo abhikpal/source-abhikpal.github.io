@@ -1,3 +1,6 @@
 [submodule "plugins/pelican-plugins"]
 	path = plugins/pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins
+[submodule "plugins/rst-kbd"]
+	path = plugins/rst-kbd
+	url = https://bitbucket.org/pelican-apricot/rst-kbd.git
