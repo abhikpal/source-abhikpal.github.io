@@ -7,6 +7,7 @@ SITENAME = AUTHOR + '\'s Weblog'
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['code', 'figs', 'images', 'favicon.ico']
 
 DEFAULT_DATE_FORMAT = '%A %B %d, %Y'
 TIMEZONE = 'Asia/Kolkata'
