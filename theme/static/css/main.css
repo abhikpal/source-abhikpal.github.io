@@ -21,10 +21,6 @@ html, body {
 
 /* 6 7 8 9 10 11 12 14 16 18 21 24 3 6 4 8 60 72 */
 
-p {
-    white-space: pre-wrap;
-}
-
 b, strong {
     color: #333;
     font-weight: bold,
@@ -212,6 +208,7 @@ footer a {
 }
 
 code, kbd, pre, samp, tt {
+    white-space: pre-wrap;
     font-family: monospace, monospace;
     font-variant-numeric: slashed-zero diagonal-fractions;
     font-size: 0.8em;
