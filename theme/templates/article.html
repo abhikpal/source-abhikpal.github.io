@@ -1,5 +1,14 @@
 {%- if article.lang %}{% set DEFAULT_LANG = article.lang %}{% endif -%}
 {% extends "base.html" %}
+{% block extra_head %}
+{% for nm, cdn, local in CDN_LINKS %}
+    {% if nm in article.includes %}
+    <script type="text/javascript"
+        async src="{% if ENABLE_CDN %}{{ cdn }}{% else %}{{ local }}{% endif %}">
+    </script>
+    {% endif %}
+{% endfor %}
+{% endblock extra_head %}
 {% block title %}{{ article.title }} | {{ super() }}{% endblock %}
 {% block content %}        
 <header>

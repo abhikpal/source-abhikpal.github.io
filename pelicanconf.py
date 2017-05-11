@@ -7,7 +7,7 @@ SITENAME = AUTHOR + '\'s Weblog'
 SITEURL = ''
 
 PATH = 'content'
-STATIC_PATHS = ['code', 'figs', 'images', 'favicon.ico']
+STATIC_PATHS = ['code', 'figs', 'images', 'videos', 'notebooks', 'favicon.ico']
 
 DEFAULT_DATE_FORMAT = '%A %B %d, %Y'
 TIMEZONE = 'Asia/Kolkata'
@@ -46,6 +46,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+FEED_MAX_ITEMS = 7
 
 LINKS = (('Blog Home', SITEURL + "/"),
          ('Github', 'https://www.github.com/abhikpal'),
@@ -55,3 +56,12 @@ DEFAULT_PAGINATION = 7
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = False
+
+CDN_LINKS = (
+    ('p5.js',
+        '//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js',
+        '/theme/js/p5/p5.js'),
+    ('mathjax',
+        'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML',
+        '/theme/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML'),
+)

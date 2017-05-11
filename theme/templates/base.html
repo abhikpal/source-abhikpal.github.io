@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="author" content="{{ AUTHOR }}">
     <meta name="description" content="{% block description %}{%endblock%}">
     <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
-    <link rel="stylesheet" type="text/css" href="/theme/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/theme/css/syntax-light.css">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     {%block extra_head %}{% endblock %}
-</head>
-<body>
-{% block content %}{% endblock %}
-{% block footer %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    {% block footer %}
     <footer>
-        {% for nm, url in LINKS %}
-        <a class="link-no-box" href="{{ url }}">{{ nm }}</a>
-        {% endfor %}
+      {% for nm, url in LINKS %}
+      <a class="link-no-box" href="{{ url }}">{{ nm }}</a>
+      {% endfor %}
+      
+      {% if FEED_ALL_ATOM %}
+      <a class="link-no-box" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom Feed</a>
+      {% endif %}
 
-        <br>
+      {% if FEED_ALL_RSS %}
+      <a class="link-no-box" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS Feed</a>
+      {% endif %}
 
-        <a href="/">{{ SITENAME }}</a> was built using
-        <a href="http://docs.getpelican.com/en/stable/">Pelican</a>.
-        Original articles on this site are CC
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">BY-NC-SA</a>
-        licensed unless otherwise stated.
+      <br>
+
+      <a href="/">{{ SITENAME }}</a> was built using
+      <a href="http://docs.getpelican.com/en/stable/">Pelican</a>.
+      Original articles on this site are CC
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">BY-NC-SA</a>
+      licensed unless otherwise stated.
     </footer>
-{% endblock %}
-{% include '_includes/ganalytics.html' %}
-</body>
+    {% endblock %}
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="/theme/css/main.css">
+      <link rel="stylesheet" type="text/css" href="/theme/css/syntax-light.css">  
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement)
+      addStylesNode.parentElement.removeChild(addStylesNode);
+      
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>    
+    {% include '_includes/ganalytics.html' %}
+  </body>
 </html>
