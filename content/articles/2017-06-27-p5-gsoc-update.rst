@@ -12,7 +12,7 @@ native Python library that will expose an API similar to Processing's.
 Use one of the links below to know more about the project:
 
 - The Google Summer of Code `project page <https://summerofcode.withgoogle.com/projects/#5809403503575040>`_.
-- The `code repository <htttps://github.com/p5py/p5>`_ on Github.
+- The `code repository <https://github.com/p5py/p5>`_ on Github.
 - The `project documentation <https://p5.readthedocs.io/>`_.
 - ...and the `website for the project <https://p5py.github.io/>`_.
 
