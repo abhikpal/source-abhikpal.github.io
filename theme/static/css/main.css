@@ -321,7 +321,8 @@ table, thead, tbody, td, th, tr {
     border: 1px solid;
 }
 
-.link-no-box {
+.link-no-box,
+.link-no-box-disabled {
     font-size: 0.7em;
     color: #c5000b;
     border-bottom: none;
@@ -332,16 +333,20 @@ table, thead, tbody, td, th, tr {
     font-variant-numeric: slashed-zero diagonal-fractions;
 }
 
+.link-no-box-disabled {
+    color: #333;
+}
+
 .paginator {
     text-align: center;
     display: block;
     align-self: center;
 }
 
+.paginator span,
 .paginator a {
     font-weight: bold;
 }
-
 
 .highlight pre {
     border-radius: 5px;

@@ -1,7 +1,22 @@
 {%- if DEFAULT_PAGINATION -%}
 <div class="paginator">
 {%- if articles_page.has_previous() -%}
-    {%- if articles_page.previous_page_number() == 1 -%}<a href="{{ SITEURL }}/{{ page_name }}.html">&laquo;</a>&nbsp;{%- else -%}<a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">&laquo;&nbsp;</a>{%- endif -%}{%- endif -%}Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}
-{%- if articles_page.has_next() -%}&nbsp;<a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">&raquo;</a>{%- endif -%}
+    <a class="link-no-box" href="{{ SITEURL }}/{{ page_name }}{%- if articles_page.previous_page_number() != 1-%}{{ articles_page.previous_page_number() }}{%- endif -%}.html
+">
+{%- else -%}
+    <span class="link-no-box-disabled">
+{%- endif -%}
+« Previous page
+{%- if articles_page.has_previous() -%}</a>{%- else -%}</span>{%- endif -%}
+
+<span class="link-no-box-disabled">/</span>
+
+{%- if articles_page.has_next() -%}
+<a class="link-no-box" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">
+{%- else -%}
+<span class="link-no-box-disabled">
+{%- endif -%}
+Next page »
+{%- if articles_page.has_next() -%}</a>{%- else -%}</span>{%- endif -%}
 </div>
 {%- endif -%}

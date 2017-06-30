@@ -44,7 +44,9 @@
 <section><h3>No posts found.</h3></section>
 {% endif %}
 
-{% if articles_page.has_other_pages() %}
-<br><a href="/{{ ARCHIVES_URL }}" class="link-box"> Older Posts </a>
-{% endif %}
+{% include "pagination.html" %}
+
+<!-- {% if articles_page.has_other_pages() %} -->
+<!-- <br><a href="/{{ ARCHIVES_URL }}" class="link-box"> Older Posts </a> -->
+<!-- {% endif %} -->
 {% endblock content %}
