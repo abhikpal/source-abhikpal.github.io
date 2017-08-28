@@ -25,29 +25,57 @@ time giving people access to Python's large ecosystem of libraries.
 Goals for the GSOC
 ------------------
 
-We wanted to use the GSOC period to mostly create the internal
-plumbing required to write basic Processing sketches. In particular,
-our initial goals were to:
+We were able to meet most of our goals for the summer of code period.
+These included:
 
-* Create a system that could work with Processing-style sketches i.e.,
-  if the user defines a `mouse_pressed` function, p5 should be able to
-  automatically attach an handler to it, if the user defines a `draw`
-  function, p5 should call it repeatedly, etc
+* [ **COMPLETED** ] Create a system that could work with
+  Processing-style sketches i.e., if the user defines a
+  :code:`mouse_pressed` function, p5 should be able to automatically
+  attach an handler to it, if the user defines a :code:`draw`
+  function, p5 should call it repeatedly, etc.
 
-* Add support for basic 2D drawing -- creating rectangles, lines,
-  points, circles, etc.
+* [ **COMPLETED** ] Add support for for basic 2D drawing -- creating
+  rectangles, lines, points, circles, etc. We also added two new
+  features to the Processing API:
 
-* Add utility functions to parse colors, work with mathematics, create
-  bezier curves, etc.
+  * Since tuples, lists, and vectors are often used to store
+    coordinates in space, we changed the original Processing API to
+    use tuple-like objects by default. So, if a user wants to draw a
+    line from :code:`start = (0, 0)` to :code:`end = (100, 120)`, they
+    can just call :code:`line(start, end)` instead of
+    :code:`line(start[0], start[1], end[0], end[1])`.
 
-* Add support for loading and displaying images.
+  * Added new methods to draw circles and squares.
 
-* Add support for displaying text.
+* [ **COMPLETED** ] Add a color parsing system similar to
+  Processing's. We also extend the Processing API using Python's
+  keyword arguments so users can use commands like
+  :code:`fill(red=255, green=127, blue=51, alpha=127)`.
 
-Since I hadn't worked on OpenGL before the GSOC period, we soon ran
-into a massive optimization issue at the end of week eight. This meant
-that we weren't able to implement image support and text support in
-p5.
+* [ **COMPLETED** ] Add utility functions to perform basic
+  mathematical operations, computing trig-functions, and generating
+  points for curves and bezier splines. We also tweaked Processing's
+  :code:`PVector` class to make it more intuitive to use. For example,
+  the syntax for adding vectors in p5 is :code:`vec_sum = vec_1 + vec_2`
+  where :code:`vec_1` and :code:`vec_2` are vectors.
+
+* [ **COMPLETED** ] `Release p5
+  <https://github.com/p5py/p5/releases/tag/v0.3.0a1>`_ to the Python
+  Package Index.
+
+* [ **COMPLETED** ] Add `example code
+  <https://github.com/p5py/p5-examples>`_ and `documentation
+  <http://p5.readthedocs.io/en/latest>`_ to help people get started.
+
+
+We had initially planned on adding support for displaying text and
+images, but unfortunately weren't able to do so in the GSOC period.
+Before week 8 of the coding period, our code was using immediate mode
+rendering and our sketches would slow down under load. Instead of
+implementing new features like image support and text support we
+decided to address the optimizing issue first and re-wrote the
+rendering code to use retained mode rendering and use numpy for all
+internal computations.
 
 
 What needs to be done?
@@ -71,8 +99,8 @@ couple of months:
 * Add support for text and fonts.
 
 
-Using p5, links, etc
---------------------
+Using p5, links to things, etc
+------------------------------
 
 p5 was released on the PyPI and can be installed using pip. For
 complete installation instructions, see the `installation page
@@ -80,7 +108,7 @@ complete installation instructions, see the `installation page
 documentation. To know more about the project, use the following
 links:
 
-* `Documentation <http://p5.readthedocs.io/en/latest/>`_
+* `Documentation <http://p5.readthedocs.io/en/latest>`_
 * `Project source code <https://github.com/p5py/p5>`_
 * `Project home page <http://p5py.github.io/>`_
 * `Repository with example p5 sketches <https://github.com/p5py/p5-examples>`_
